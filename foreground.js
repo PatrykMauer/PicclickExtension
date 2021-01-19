@@ -1,13 +1,17 @@
 var spans = document.querySelectorAll(".new");
+var list=[];
 
-// var li = spans[0].parentElement.parentElement.parentElement.parentElement;
-// console.log(li);
+for(i=0; i<spans.length;i++){
+    list.push(spans[i].parentElement.parentElement.parentElement.parentElement)
+}
 
-// document.body.innerHTML =`
-// <ul class="items list-unstyled">
-// ${li.innerHTML}
-// </ul>`;
-
+function checkForMatch(array, propertyToMatch, valueToMatch, position){
+    for(var i = 0; i < position; i++){
+        if(array[i][propertyToMatch] == valueToMatch)
+            return true;
+    }
+    return false;
+}
 
 var i;
 var bodyHtml=`
@@ -15,10 +19,12 @@ var bodyHtml=`
 				</div>
 <div class= "container-fluid">
     <ul class="items list-unstyled">`;
-for(i=0; i<spans.length;i++){
-    spans[i].parentElement.parentElement.parentElement.parentElement.setAttribute("itemprop","isSimilarTo");
-    spans[i].parentElement.parentElement.parentElement.parentElement.setAttribute("itemscope",'');
-    bodyHtml+= spans[i].parentElement.parentElement.parentElement.parentElement.outerHTML;
+for(i=0; i<list.length;i++){
+    if(checkForMatch(list,"id",list[i].id, i))
+        continue;
+    list[i].setAttribute("itemprop","isSimilarTo");
+    list[i].setAttribute("itemscope",'');
+    bodyHtml+= list[i].outerHTML;
 }
 bodyHtml+=`</ul></div>`;
 
