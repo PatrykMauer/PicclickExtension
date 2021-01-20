@@ -15,8 +15,6 @@ function checkForMatch(array, propertyToMatch, valueToMatch, position){
 
 var i;
 var bodyHtml=`
-<div class="slider-wrapper pull-right" data-toggle="tooltip" data-placement="left" data-html="true" data-title="&lt;strong&gt;Zoom Thumbnails&lt;/strong&gt;&lt;br&gt;&lt;small&gt;PicClick Exclusive&lt;/small&gt;" data-original-title="" title=""><small><span class="glyphicon glyphicon-th" aria-hidden="true"></span></small><div id="slider" class="noUi-extended noUi-target noUi-rtl noUi-horizontal noUi-connect"><div class="noUi-base"><div class="noUi-origin noUi-background" style="left: 0%;"><div class="noUi-handle noUi-handle-upper"></div></div></div></div><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></div>
-				</div>
 <div class= "container-fluid">
     <ul class="items list-unstyled">`;
 for(i=0; i<list.length;i++){
