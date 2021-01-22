@@ -1,3 +1,13 @@
+function checkForMatch(array, propertyToMatch, valueToMatch, position) {
+  for (var i = 0; i < position; i++) {
+    if (array[i][propertyToMatch] == valueToMatch) return true;
+  }
+  return false;
+}
+
+var a = "";
+a.split(" ");
+
 console.log("Injected");
 
 var spans = document.querySelectorAll(".new");
@@ -7,13 +17,6 @@ for (i = 0; i < spans.length; i++) {
   liArray.push(
     spans[i].parentElement.parentElement.parentElement.parentElement
   );
-}
-
-function checkForMatch(array, propertyToMatch, valueToMatch, position) {
-  for (var i = 0; i < position; i++) {
-    if (array[i][propertyToMatch] == valueToMatch) return true;
-  }
-  return false;
 }
 
 var i;
@@ -29,9 +32,14 @@ for (i = 0; i < liArray.length; i++) {
     continue;
   liArray[i].setAttribute("itemprop", "isSimilarTo");
   liArray[i].setAttribute("itemscope", "");
-  newListedArr.push(liArray[i].outerHTML);
+  newListedArr.push(liArray[i]);
 }
 
-console.log(newListedArr);
+// var time = newListedArr[2].children[1].children[1].children[0].textContent.split(
+//   " "
+// );
+
+// console.log("child");
+// console.log(splitTime(time));
 
 newListedArr = newListedArr;

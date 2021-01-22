@@ -3,10 +3,10 @@ var bodyHtml = `
     <ul class="items list-unstyled">`;
 
 console.log("display!");
-console.log(newListedArr);
 
-bodyHtml += newListedArr;
-
+for (i = 0; i < newListedArr.length; i++) {
+  bodyHtml += newListedArr[i].outerHTML;
+}
 bodyHtml += `</ul></div>`;
 
 console.log(bodyHtml);

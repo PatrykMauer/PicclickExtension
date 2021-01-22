@@ -82,7 +82,15 @@ chrome.tabs.query({ active: false }, tabs => {
                                                     () =>
                                                       chrome.tabs.executeScript(
                                                         tabs[0].id,
-                                                        { file: "./display.js" }
+                                                        { file: "./sort.js" },
+                                                        () =>
+                                                          chrome.tabs.executeScript(
+                                                            tabs[0].id,
+                                                            {
+                                                              file:
+                                                                "./display.js",
+                                                            }
+                                                          )
                                                       )
                                                   )
                                               )
