@@ -16,14 +16,18 @@ function checkForMatch(array, propertyToMatch, valueToMatch, position) {
 
 var i;
 if (typeof bodyHtml === "undefined") {
-  var bodyHtml = "";
+  var bodyHtml = [];
 }
 
 for (i = 0; i < list.length; i++) {
-  if (checkForMatch(list, "id", list[i].id, i)) continue;
+  if (
+    checkForMatch(list, "id", list[i].id, i) ||
+    checkForMatch(bodyHtml, "id", list[i].id, bodyHtml.length)
+  )
+    continue;
   list[i].setAttribute("itemprop", "isSimilarTo");
   list[i].setAttribute("itemscope", "");
-  bodyHtml += list[i].outerHTML;
+  bodyHtml.push(list[i].outerHTML);
 }
 
 bodyHtml = bodyHtml;
